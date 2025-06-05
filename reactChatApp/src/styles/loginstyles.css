@@ -1,0 +1,123 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/clouds.jpg');
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    position: fixed;
+}
+
+.innerLoginContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 8rem;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.485);
+    z-index: 9999;
+}
+
+.title {
+    grid-column: 1 / 3;
+    justify-self: center;
+    align-self: center;
+    font-family: "Sniglet", system-ui;
+    font-weight: 800;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 3px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.desc {
+    grid-column: 1 / 3;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    white-space: nowrap;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.homepage {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.signUpBtn button:hover, .loginBtn button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*** SIGN UP FORM STYLING ***/
+
+.signUpContainer input {
+    padding: 1.5em;
+    border-radius: 3rem;
+    border: 2px solid black;
+    width: 18rem;
+    font-family: "Lato", sans-serif;
+}
+
+.signUpContainer input:focus {
+    outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.registerBtn button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.signUpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.validateErr {
+    font-size: 0.7rem;
+    color: red;
+}
+
+.backArrow {
+    display: flex;
+    align-items: center;
+    transition: all 500ms ease-in-out;
+}
+
+.backArrow:hover {
+    cursor: pointer;
+    transform: translateX(-1rem);
+}
+
+.backToLogin {
+    font-family: "Lato", sans-serif;
+    grid-row: 6;
+}
+
+
