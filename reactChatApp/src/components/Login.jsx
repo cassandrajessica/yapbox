@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import '../styles/loginstyles.css';
 import styles from '../styles/buttons.module.css'
+import inputStyle from '../styles/inputfield.module.css';
 import arrow from '../images/backArrow.svg';
+import loginGirl from '../images/loginImage1.png';
 function Login() {
 
     // state to hold users data entered
@@ -104,30 +106,49 @@ function Login() {
     const goBack = () => {
         setShowSignUpForm(false);
         setShowHomepage(true);
+        setUserData({
+            username: '',
+            email: '',
+            password: '',
+            confirmPass: '',
+        });
+        setValidationErr({});
     }
 
     return(
         <>
         <div className="loginContainer">
             <div className="innerLoginContainer">
+                <div className="cartoonGirlLogin">
+                    <img src={loginGirl} alt="cartoon image of a girl on her phone" />
+                </div>
                 <h1 className='title'>YapBox</h1>
-                <h3 className='desc'>- a messenger app -</h3>
+                <h3 className='desc'>a messenger app for the yappers built by a yapper</h3>
 
                     {!showSignUpForm && showHomepage &&
                         <div className="homepage">
-                            <div className="signUpBtn">
-                                <button className={styles.button}
-                                onClick={signUp}>Sign Up</button>
+                            <div id={inputStyle.field} className='userSignin'>
+                                <input type='text' 
+                                id='usenameSignin'
+                                name='usernameSignin'
+                                placeholder='Username' />
+                                <input type='text' 
+                                id='passwordSignin'
+                                name='passwordSignin'
+                                placeholder='Password' />
                             </div>
                             <div className="loginBtn">
                                 <button className={styles.button}>Login</button>
+                            </div> 
+                            <div className="signUpBtn">
+                                <p onClick={signUp}>Sign Up</p>
                             </div>
                         </div>
                     }
                 
 
                 {showSignUpForm && 
-                    <form className="signUpContainer" onSubmit={handleSubmit}>
+                    <form className="signUpContainer" onSubmit={handleSubmit} id={inputStyle.field}>
                         {/* USERNAME FIELD */}
                         <div className="usernameSignUp">
                             <input type='text' 
@@ -181,8 +202,8 @@ function Login() {
                         onMouseLeave={handleMouseLeave}
                         onClick={goBack}>
                             <img src={arrow} alt="back arrow" className="backArrowIcon"/>
+                            {arrowVisible && <p className="backToLogin" onClick={goBack}> Back to Login</p>} 
                         </div>
-                        {arrowVisible && <p className="backToLogin">Back to Login</p>}    
                     </form>
                 }
             </div>
