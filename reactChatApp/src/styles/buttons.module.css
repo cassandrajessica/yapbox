@@ -3,9 +3,9 @@ button {
     width: 8rem;
     border: none;
     border-radius: 5rem;
-    border: 2px solid black;
-    background-color: white;
+    background: rgb(0, 0, 0);
     transition: all 300ms ease-in-out;
     font-family: "Lato", sans-serif;
+    color:white;
 }
 
