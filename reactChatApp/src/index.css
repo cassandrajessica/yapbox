@@ -4,6 +4,6 @@
     box-sizing: border-box;
 }
 
-p {
+p, h3, button, input {
     font-family: "Lato", sans-serif;
 }
