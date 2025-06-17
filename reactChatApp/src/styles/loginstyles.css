@@ -67,7 +67,7 @@
     gap: 1rem;
 }
 
-.userSignin {
+#userSignin {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -104,7 +104,7 @@
     transform: scale(1.1);
 }
 
-.signUpContainer {
+#signUpContainer {
     grid-column: 2;
     grid-row: 4;
     display: flex;
