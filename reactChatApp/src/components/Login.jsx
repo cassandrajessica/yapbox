@@ -127,7 +127,7 @@ function Login() {
 
                     {!showSignUpForm && showHomepage &&
                         <div className="homepage">
-                            <div id={inputStyle.field} className='userSignin'>
+                            <div id='userSignin' className= {inputStyle.field}>
                                 <input type='text' 
                                 id='usenameSignin'
                                 name='usernameSignin'
@@ -148,7 +148,7 @@ function Login() {
                 
 
                 {showSignUpForm && 
-                    <form className="signUpContainer" onSubmit={handleSubmit} id={inputStyle.field}>
+                    <form className={inputStyle.field} onSubmit={handleSubmit} id="signUpContainer">
                         {/* USERNAME FIELD */}
                         <div className="usernameSignUp">
                             <input type='text' 
