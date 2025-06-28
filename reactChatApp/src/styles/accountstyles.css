@@ -47,7 +47,7 @@
     gap: 1rem;
 }
 
-.backArrowContainer img {
+.nextArrowContainer img {
     transform: scaleX(-1);
     width: 100%;
     border-radius: 6rem;
@@ -55,10 +55,75 @@
     padding: 0.5em;
 }
 
-.backArrowContainer {
+.arrowContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.arrowContainer .backArrow {
+    width: 100%;
+    border-radius: 6rem;
+    background-color: black;
+    padding: 0.5em;
+}
+
+.arrowContainer .nextArrow {
+    transform: scaleX(-1);
+    width: 100%;
+    border-radius: 6rem;
+    background-color: black;
+    padding: 0.5em;
+}
+
+.nextArrowContainer {
     padding-top: 1rem;
 }
 
+.nextArrow:hover{
+    cursor: pointer;
+    transform: scale(-1.1);
+}
+
+.backArrow:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.addProfilePicContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profilePicIcon {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.profilePicInputContainer input::file-selector-button {
+    display: flex;
+    padding: 1em;
+    border-radius: 2rem;
+    border: 1px dotted gray;
+    width: 100%;
+    cursor: pointer;
+}
+
+.profilePicInputContainer input::file-selector-button:hover {
+    background-color: rgb(166, 166, 166);
+}
+
+.skip {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 48em){
