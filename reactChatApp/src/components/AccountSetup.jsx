@@ -56,6 +56,7 @@ function AccountSetup() {
             firstName: '',
             lastName: '',
         });
+        setFile();
     }
 
     return(
