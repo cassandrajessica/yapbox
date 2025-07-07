@@ -1,0 +1,18 @@
+.field input {
+    padding: 1.5em;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    width: 18rem;
+    font-family: "Lato", sans-serif;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover, 
+.field input:-webkit-autofill:focus, 
+.field input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

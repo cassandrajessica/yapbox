@@ -1,0 +1,154 @@
+.accountSetupContainer {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 252, 222);
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
+.innerAccountSetupContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  grid-template-areas:
+    "img"
+    "title"
+    "desc"
+    "input";
+}
+
+.girlWaving img {
+  width: 30%;
+}
+
+.girlWaving {
+  grid-area: img;
+  text-align: center;
+}
+
+.introduction {
+  grid-area: title;
+  font-size: 3rem;
+  text-align: center;
+  justify-self: top;
+  font-family: "Merriweather", serif;
+}
+
+.introDesc {
+  grid-area: desc;
+}
+
+#inputContainer {
+  display: flex;
+  grid-area: input;
+  gap: 1rem;
+}
+
+.nextArrowContainer img {
+  transform: scaleX(-1);
+  width: 100%;
+  border-radius: 6rem;
+  background-color: black;
+  padding: 0.5em;
+}
+
+.arrowContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.arrowContainer .backArrow {
+  width: 100%;
+  border-radius: 6rem;
+  background-color: black;
+  padding: 0.5em;
+}
+
+.arrowContainer .nextArrow {
+  transform: scaleX(-1);
+  width: 100%;
+  border-radius: 6rem;
+  background-color: black;
+  padding: 0.5em;
+}
+
+.nextArrowContainer {
+  padding-top: 1rem;
+}
+
+.nextArrow:hover {
+  cursor: pointer;
+  transform: scale(-1.1);
+}
+
+.backArrow:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.addProfilePicContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profilePicIcon {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.profilePicInputContainer input::file-selector-button {
+  display: flex;
+  padding: 1em;
+  border-radius: 2rem;
+  border: 1px dotted gray;
+  width: 100%;
+  cursor: pointer;
+}
+
+.profilePicInputContainer input::file-selector-button:hover {
+  background-color: rgb(166, 166, 166);
+}
+
+.skip {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*** MEDIA QUERY ***/
+@media screen and (max-width: 48em) {
+  .innerAccountSetupContainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "title"
+      "desc"
+      "input";
+  }
+
+  .girlWaving img {
+    width: 50%;
+  }
+
+  .girlWaving {
+    text-align: center;
+  }
+
+  #inputContainer {
+    flex-direction: column;
+  }
+
+  .introduction {
+    align-self: start;
+  }
+}
