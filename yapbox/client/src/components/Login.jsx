@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/loginstyles.css";
 import styles from "../styles/buttons.module.css";
 import inputStyle from "../styles/inputfield.module.css";
 import arrow from "../images/backArrow.svg";
 import loginGirl from "../images/loginImage1.png";
+
 function Login() {
   // state to hold users data entered
   const [userData, setUserData] = useState({
@@ -24,6 +26,9 @@ function Login() {
 
   // controls homepage visbility
   const [showHomepage, setShowHomepage] = useState(true);
+
+  // use to navigate through pages
+  const navigate = useNavigate();
 
   // handle change when input is entered
   const handleChange = (e) => {
@@ -84,8 +89,37 @@ function Login() {
     setValidationErr(errors);
     if (Object.keys(validationErr).length === 0) {
       console.log("form submitted", userData);
+      sendToBackEnd();
     }
   };
+
+  // send user data to backend
+  const sendToBackEnd = async() => {
+    try {
+        const response = await fetch('http://localhost:5000/api/users/register', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: userData.username,
+                email: userData.email,
+                password: userData.password,
+            })
+        })
+
+        const data = await response.json();
+
+        if(response.ok) {
+            console.log("successfully sent", data);
+
+            navigate('/setup');
+        }
+
+    } catch(err) {
+        console.error("Error sending data: ", err);
+    }
+  }
 
   // for the 'back to login' text when hovering on signup arrow
   const handleMouseEnter = () => {
